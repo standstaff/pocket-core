@@ -26,7 +26,7 @@ func (k Keeper) SetPrevStateValidatorsPower(ctx sdk.Ctx, power sdk.BigInt) {
 	_ = store.Set(types.PrevStateTotalPowerKey, b)
 }
 
-// prevStateValidatorIterator - Retrieve an iterator for the consensus validators in the prevState block
+// prevStateValidatorsIterator - Retrieve an iterator for the consensus validators in the prevState block
 func (k Keeper) prevStateValidatorsIterator(ctx sdk.Ctx) (iterator sdk.Iterator) {
 	store := ctx.KVStore(k.storeKey)
 	iterator, _ = sdk.KVStorePrefixIterator(store, types.PrevStateValidatorsPowerKey)
